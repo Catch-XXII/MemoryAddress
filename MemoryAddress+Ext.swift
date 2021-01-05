@@ -1,3 +1,5 @@
+import Foundation
+
 struct MemoryAddress<T>: CustomStringConvertible {
     let intValue: Int
     
@@ -23,13 +25,12 @@ class MyClass {let foo = 42}
 var classInstance = MyClass()
 
 let classInstanceAddress = MemoryAddress(of: classInstance)
-
-//print(String(format: "%018p", classInstanceAddress.intValue))
+print(String(format: "%018p", classInstanceAddress.intValue))
 print(classInstanceAddress)
 
 struct MyStruct {let foo = 42}
 
 var structInstance = MyStruct()
 let strucInstanceAddress = MemoryAddress(of: &structInstance)
-//print(String(format: "%018p", strucInstanceAddress.intValue))
+print(String(format: "%018p", strucInstanceAddress.intValue))
 print(strucInstanceAddress)
